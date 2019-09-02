@@ -32,7 +32,7 @@ class Kolory
 	public
 		function add_menu_page() 
 		{
-			add_submenu_page('Gregsoft_Theme_Settings', 'Konfiguracja kolorów', 'Konfiguracja kolorów', 'manage_options', 'konfiguracja-kolorow', array($this, 'opcje_kolorow'));
+			add_submenu_page('themes.php', 'Konfiguracja kolorów', 'Konfiguracja kolorów', 'manage_options', 'konfiguracja-kolorow', array($this, 'opcje_kolorow'));
 		}
 		
 		
@@ -134,7 +134,18 @@ class Kolory
 			$i = 0;
 			
 			// var_dump($klienci);
+			$labels = array('Kolor główny',
+							'Kolor dodatkowy',
+							'Kolor czcionki',
+							'Kolor 4',
+							'Kolor 5',
+							'Kolor 6',
+							'Kolor 7',
+							'Kolor 8',
+							'Kolor 9',
+							'Kolor 10'
 			
+							);
 			?>
 			<table id="tablica">
 				<thead>
@@ -146,7 +157,7 @@ class Kolory
 				</thead>
 				<tbody>
 		
-
+		
 			<?php for ($i=0 ; $i<10; $i++) { ?>
 				<tr class="logo-klienci">
 					<td><?=($i+1); ?>.</td>
@@ -169,7 +180,7 @@ class Kolory
 						
 						
 					</td>
-					<td>--color-<?=($i+1);?></td>
+					<td><?=$labels[$i];?></td>
 					
 					
 					
